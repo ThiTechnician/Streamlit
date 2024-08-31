@@ -3,7 +3,8 @@ import streamlit as st
 pages = {
     "Início": [
         st.Page("Apresentação.py", title="Sobre mim"),
-        st.Page("Currículo.py", title="Thiago Medeiros"),
+        st.Page("Curriculo.py", title="Thiago Medeiros"),
+        st.Page("Contato.py", title="Contato"),
     ],
     "Projetos": [
         st.Page("Análise de Dados.py", title="Projeto de Análise"),
@@ -11,3 +12,5 @@ pages = {
     ],
 }
 
+pg = st.navigation(pages)
+pg.run()
