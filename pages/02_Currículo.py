@@ -1,7 +1,7 @@
 import streamlit as st
 
 # Especifica o nome do arquivo PDF no mesmo diretório do script
-pdf_file = "curriculo_linkedin.pdf"
+pdf_file = "pages/curriculo_linkedin.pdf"
 
 # CSS para tornar o iframe responsivo
 css = """
