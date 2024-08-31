@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.markdown("""
+html_content = """
             <!DOCTYPE html>
 <!-- Created by pdf2htmlEX (https://github.com/pdf2htmlEX/pdf2htmlEX) -->
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -317,4 +317,6 @@ pdf2htmlEX.defaultViewer = new pdf2htmlEX.Viewer({});
 </div>
 </body>
 </html>
-""")
+"""
+
+st.markdown(html_content, unsafe_allow_html=True)
