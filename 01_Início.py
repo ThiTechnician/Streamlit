@@ -8,7 +8,7 @@ pages = {
     ],
     "Projetos": [
         st.Page("Análise de Dados.py", title="Projeto de Análise"),
-        st.Page("Portifolio", title="Outro projeto"),
+        st.Page("Portifolio.py", title="Outro projeto"),
     ],
 }
 
