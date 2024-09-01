@@ -38,16 +38,6 @@ html_content = """
         Thiago Medeiros<br>
         Engenheiro de Produção | Pós-graduado em Ciência de Dados
     </div>
-    <div class="contact">
-        <p><strong>Contato:</strong></p>
-        <p>11982517878 (Mobile)</p>
-        <p>thiago.carvalho.gv@gmail.com</p>
-        <p><a href="https://www.linkedin.com/in/engenheirothiagomedeiros">LinkedIn</a></p>
-        <p><a href="https://github.com/ThiTechnician">Portfolio GitHub</a></p>
-    </div>
-    
-    <div class="subheader">Resumo</div>
-    
     <div class="subheader">Experiência</div>
     <div class="experience">
         <p class="experience-title">Canon Brasil</p>
