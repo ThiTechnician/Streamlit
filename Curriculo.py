@@ -47,9 +47,6 @@ html_content = """
     </div>
     
     <div class="subheader">Resumo</div>
-    <div class="summary">
-        <p>Profissional com mais de uma década de experiência na área de tecnologia gráfica, buscando expandir e aprimorar meu conhecimento em Ciência de Dados. Sou formado em Engenharia de Produção, com pós-graduação em Ciência de Dados, além de possuir sólida habilidade em linguagem de programação Python. Meu objetivo atual é direcionar minha carreira para Ciência de Dados, aproveitando minhas habilidades técnicas e conhecimentos de análise estatística adquiridos ao longo da minha graduação. Além disso, possuo competências em linguagens como C, HTML, CSS e sou familiarizado com o uso do Git para versionamento.</p>
-    </div>
     
     <div class="subheader">Experiência</div>
     <div class="experience">
