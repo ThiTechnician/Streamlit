@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px
 
 # Exemplo de dados para o gráfico
 data = {
@@ -9,20 +8,17 @@ data = {
 }
 df = pd.DataFrame(data)
 
-# Criando o gráfico de barras com Plotly Express
-fig = px.bar(df, x='Categoria', y='Valores', title='Exemplo de Gráfico de Barras')
-
 # Configuração das colunas
 col1, col2 = st.columns(2)
-
-
 
 st.markdown("""
 ## Sobre Mim
 """, unsafe_allow_html=True)
-# Exibindo o gráfico na coluna col1
+
+# Exibindo o gráfico na coluna col1 usando o st.bar_chart
 with col1:
-    st.plotly_chart(fig)
+    st.bar_chart(df.set_index('Categoria'))
+
 
 with col2:
     st.markdown("""
