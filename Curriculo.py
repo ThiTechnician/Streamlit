@@ -37,19 +37,6 @@ html_content = """
     <div class="header">
         Thiago Medeiros<br>
         Engenheiro de Produção | Pós-graduado em Ciência de Dados
-    </div>
-    <div class="contact">
-        <p><strong>Contato:</strong></p>
-        <p>11982517878 (Mobile)</p>
-        <p>thiago.carvalho.gv@gmail.com</p>
-        <p><a href="https://www.linkedin.com/in/engenheirothiagomedeiros">LinkedIn</a></p>
-        <p><a href="https://github.com/ThiTechnician">Portfolio GitHub</a></p>
-    </div>
-    
-    <div class="subheader">Resumo</div>
-    <div class="summary">
-        <p>Profissional com mais de uma década de experiência na área de tecnologia gráfica, buscando expandir e aprimorar meu conhecimento em Ciência de Dados. Sou formado em Engenharia de Produção, com pós-graduação em Ciência de Dados, além de possuir sólida habilidade em linguagem de programação Python. Meu objetivo atual é direcionar minha carreira para Ciência de Dados, aproveitando minhas habilidades técnicas e conhecimentos de análise estatística adquiridos ao longo da minha graduação. Além disso, possuo competências em linguagens como C, HTML, CSS e sou familiarizado com o uso do Git para versionamento.</p>
-    </div>
     
     <div class="subheader">Experiência</div>
     <div class="experience">
