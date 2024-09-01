@@ -7,7 +7,7 @@ st.markdown("""
 col1, col2= st.columns(2)
 
 with col2:
-st.markdown("""
+    st.markdown("""
     <p style="text-align: justify;">
     Com mais de uma década de experiência na área de tecnologia gráfica, tenho me dedicado a expandir e aprimorar meu conhecimento em Ciência de Dados. Sou formado em Engenharia de Produção e possuo uma pós-graduação em Ciência de Dados, além de uma sólida experiência em programação com Python.
     </p>
