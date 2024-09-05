@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import plotly.express as px
 
 st.markdown("""
 ## Sobre Mim
@@ -14,10 +15,12 @@ df = pd.DataFrame(data)
 
 # Configuração das colunas
 col1, col2 = st.columns(2)
-
-# Exibindo o gráfico na coluna col1 usando o st.bar_chart
 with col1:
-    st.bar_chart(df.set_index('Categoria'))
+    # Plotando o gráfico com Plotly Express
+    fig = px.bar(df, x='Categoria', y='Valor', color='Categoria')
+
+    # Exibindo o gráfico no Streamlit
+    st.plotly_chart(fig)
 
 
 with col2:
