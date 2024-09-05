@@ -18,7 +18,7 @@ html_content = """
             font-size: 32px;
             font-weight: bold;
             margin-bottom: 30px;
-            color: #4CAF50;
+            color: ##000000;
         }
         .subheader {
             font-size: 24px;
