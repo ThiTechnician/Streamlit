@@ -1,6 +1,10 @@
 import streamlit as st
 import pandas as pd
 
+st.markdown("""
+## Sobre Mim
+""", unsafe_allow_html=True)
+
 # Exemplo de dados para o gráfico
 data = {
     'Categoria': ['A', 'B', 'C', 'D'],
@@ -10,10 +14,6 @@ df = pd.DataFrame(data)
 
 # Configuração das colunas
 col1, col2 = st.columns(2)
-
-st.markdown("""
-## Sobre Mim
-""", unsafe_allow_html=True)
 
 # Exibindo o gráfico na coluna col1 usando o st.bar_chart
 with col1:
