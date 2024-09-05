@@ -8,28 +8,47 @@ html_content = """
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
+            font-family: 'Arial', sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+            color: #333;
         }
         .header {
             text-align: center;
-            font-size: 24px;
+            font-size: 32px;
             font-weight: bold;
+            margin-bottom: 30px;
+            color: #4CAF50;
         }
         .subheader {
-            font-size: 18px;
+            font-size: 24px;
             font-weight: bold;
-            margin-top: 20px;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            color: #333;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
         }
-        .contact, .skills, .experience, .education, .certifications, .languages {
-            margin-bottom: 20px;
-        }
-        .contact p, .skills p, .experience p, .education p, .certifications p, .languages p {
-            margin: 5px 0;
+        .experience, .education, .certifications, .languages {
+            margin-bottom: 25px;
         }
         .experience-title, .education-title, .certification-title, .language-title {
             font-weight: bold;
             margin-top: 10px;
+            color: #333;
+        }
+        p {
+            margin: 8px 0;
+        }
+        ul {
+            margin-left: 20px;
+            padding-left: 10px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .experience ul, .education ul, .certifications ul {
+            list-style-type: disc;
         }
     </style>
 </head>
@@ -42,58 +61,80 @@ html_content = """
     <div class="subheader">Experiência</div>
     <div class="experience">
         <p class="experience-title">Canon Brasil</p>
-        <p>Técnico de Copiadoras e Sistemas de Impressão IV – Setor de Soluções (março de 2024 - Presente)</p>
-        <p>Responsável pela implantação e suporte de soluções de impressão, digitalização e gestão de dados. Também envolvido no desenvolvimento de ferramentas para análise, processamento e visualização de dados.</p>
-        <p>Técnico de Copiadoras e Sistemas de Impressão IV (janeiro de 2023 - março de 2024)</p>
-        <p>Técnico de Copiadoras e Sistemas de Impressão III (julho de 2017 - janeiro de 2023)</p>
-        <p>Técnico de Copiadoras e Sistemas de Impressão II (novembro de 2016 - julho de 2017)</p>
-        <p>Técnico PB Jr. (setembro de 2012 - julho de 2017)</p>
-        <p>Estagiário (abril de 2012 - setembro de 2012)</p>
+        <ul>
+            <li>Técnico de Copiadoras e Sistemas de Impressão IV – Setor de Soluções (março de 2024 - Presente)</li>
+            <li>Responsável pela implantação e suporte de soluções de impressão, digitalização e gestão de dados.</li>
+            <li>Desenvolvimento de ferramentas para análise, processamento e visualização de dados.</li>
+            <li>Técnico de Copiadoras e Sistemas de Impressão IV (janeiro de 2023 - março de 2024)</li>
+            <li>Técnico de Copiadoras e Sistemas de Impressão III (julho de 2017 - janeiro de 2023)</li>
+            <li>Técnico de Copiadoras e Sistemas de Impressão II (novembro de 2016 - julho de 2017)</li>
+            <li>Técnico PB Jr. (setembro de 2012 - julho de 2017)</li>
+            <li>Estagiário (abril de 2012 - setembro de 2012)</li>
+        </ul>
     </div>
 
     <div class="experience">
         <p class="experience-title">Cientista de Dados Autônomo</p>
-        <p>(2024 - Presente)</p>
-        <p>Atuando como consultor autônomo, desenvolvendo projetos de ciência de dados para empresas de diversos setores, focado em análise de dados, machine learning e visualização de dados para otimização de processos e estratégias empresariais.</p>
+        <ul>
+            <li>Atuando como consultor autônomo em ciência de dados (2024 - Presente)</li>
+            <li>Desenvolvendo projetos para otimização de processos e estratégias empresariais usando análise de dados e machine learning.</li>
+        </ul>
     </div>
 
     <div class="subheader">Formação Acadêmica</div>
     <div class="education">
-        <p class="education-title">Universidade São Judas Tadeu</p>
-        <p>Bacharelado em Engenharia, Engenharia de Produção (2014 - 2018)</p>
-
-        <p class="education-title">Anhanguera Educacional</p>
-        <p>Pós-graduação Lato Sensu - Especialização, Business intelligence, big data e analytics - ciência de dados (junho de 2022 - dezembro de 2022)</p>
-
-        <p class="education-title">ETEC Getúlio Vargas</p>
-        <p>Técnico, Mecatrônica (2010 - 2011)</p>
-
-        <p class="education-title">Senac São Paulo</p>
-        <p>Técnico, Tecnologia em Desenho Técnico e AutoCAD (2014 - 2015)</p>
-
-        <p class="education-title">ETEC Guaracy Silveira</p>
-        <p>Técnico, Eletrônica (2012 - 2012)</p>
+        <ul>
+            <li>
+                <span class="education-title">Universidade São Judas Tadeu</span><br>
+                Bacharelado em Engenharia, Engenharia de Produção (2014 - 2018)
+            </li>
+            <li>
+                <span class="education-title">Anhanguera Educacional</span><br>
+                Pós-graduação Lato Sensu - Business intelligence, Big Data e Analytics - Ciência de Dados (junho de 2022 - dezembro de 2022)
+            </li>
+            <li>
+                <span class="education-title">ETEC Getúlio Vargas</span><br>
+                Técnico, Mecatrônica (2010 - 2011)
+            </li>
+            <li>
+                <span class="education-title">Senac São Paulo</span><br>
+                Técnico, Tecnologia em Desenho Técnico e AutoCAD (2014 - 2015)
+            </li>
+            <li>
+                <span class="education-title">ETEC Guaracy Silveira</span><br>
+                Técnico, Eletrônica (2012 - 2012)
+            </li>
+        </ul>
     </div>
 
     <div class="subheader">Certificações</div>
     <div class="certifications">
-        <p class="certification-title">Stanford University</p>
-        <p>Introdução à Estatística (Emitido em dezembro de 2023)</p>
-
-        <p class="certification-title">Fundação Getúlio Vargas (FGV)</p>
-        <p>Introdução à Ciência de Dados (Emitido em outubro de 2023)</p>
-
-        <p class="certification-title">Alura</p>
-        <p>Formação Python (Emitido em 2021)</p>
+        <ul>
+            <li>
+                <span class="certification-title">Stanford University</span><br>
+                Introdução à Estatística (Emitido em dezembro de 2023)
+            </li>
+            <li>
+                <span class="certification-title">Fundação Getúlio Vargas (FGV)</span><br>
+                Introdução à Ciência de Dados (Emitido em outubro de 2023)
+            </li>
+            <li>
+                <span class="certification-title">Alura</span><br>
+                Formação Python (Emitido em 2021)
+            </li>
+        </ul>
     </div>
 
     <div class="subheader">Idiomas</div>
     <div class="languages">
-        <p class="language-title">Inglês</p>
-        <p>Avançado / Fluente</p>
+        <ul>
+            <li>
+                <span class="language-title">Inglês</span><br>
+                Avançado / Fluente
+            </li>
+        </ul>
     </div>
 </body>
 </html>
-
 """
 st.components.v1.html(html_content, height=1000, scrolling=True)
