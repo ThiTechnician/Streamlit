@@ -9,22 +9,22 @@ html_content = """
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            margin: 40px;
+            margin: 20px;
             line-height: 1.6;
             color: #333;
         }
         .header {
             text-align: center;
-            font-size: 32px;
+            font-size: 36px;
             font-weight: bold;
             margin-bottom: 30px;
-            color: ##000000;
+            color: #000;
         }
         .subheader {
             font-size: 24px;
             font-weight: bold;
-            margin-top: 40px;
-            margin-bottom: 15px;
+            margin-top: 30px;
+            margin-bottom: 10px;
             color: #333;
             border-bottom: 2px solid #4CAF50;
             padding-bottom: 5px;
@@ -37,6 +37,9 @@ html_content = """
             margin-top: 10px;
             color: #333;
         }
+        .experience-description, .education-description, .certification-description, .language-description {
+            margin-left: 20px;
+        }
         p {
             margin: 8px 0;
         }
@@ -47,37 +50,57 @@ html_content = """
         li {
             margin-bottom: 10px;
         }
-        .experience ul, .education ul, .certifications ul {
-            list-style-type: disc;
+        @media (max-width: 768px) {
+            .header {
+                font-size: 28px;
+            }
+            .subheader {
+                font-size: 20px;
+            }
+            .experience-title, .education-title, .certification-title, .language-title {
+                font-size: 18px;
+            }
+            .experience-description, .education-description, .certification-description, .language-description {
+                margin-left: 10px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="header">
-        Thiago Medeiros<br>
-        Engenheiro de Produção | Pós-graduado em Ciência de Dados
+        Thiago Medeiros - Cientista de Dados
     </div>
 
     <div class="subheader">Experiência</div>
     <div class="experience">
-        <p class="experience-title">Canon Brasil</p>
-        <ul>
-            <li>Técnico de Copiadoras e Sistemas de Impressão IV – Setor de Soluções (março de 2024 - Presente)</li>
-            <li>Responsável pela implantação e suporte de soluções de impressão, digitalização e gestão de dados.</li>
-            <li>Desenvolvimento de ferramentas para análise, processamento e visualização de dados.</li>
-            <li>Técnico de Copiadoras e Sistemas de Impressão IV (janeiro de 2023 - março de 2024)</li>
-            <li>Técnico de Copiadoras e Sistemas de Impressão III (julho de 2017 - janeiro de 2023)</li>
-            <li>Técnico de Copiadoras e Sistemas de Impressão II (novembro de 2016 - julho de 2017)</li>
-            <li>Técnico PB Jr. (setembro de 2012 - julho de 2017)</li>
-            <li>Estagiário (abril de 2012 - setembro de 2012)</li>
-        </ul>
+        <p class="experience-title">Cientista de Dados Autônomo</p>
+        <p class="experience-description">Atuando como consultor autônomo em ciência de dados (2024 - Presente)</p>
+        <p class="experience-description">Desenvolvendo projetos para otimização de processos e estratégias empresariais usando análise de dados e machine learning.</p>
     </div>
 
     <div class="experience">
-        <p class="experience-title">Cientista de Dados Autônomo</p>
+        <p class="experience-title">Canon Brasil</p>
         <ul>
-            <li>Atuando como consultor autônomo em ciência de dados (2024 - Presente)</li>
-            <li>Desenvolvendo projetos para otimização de processos e estratégias empresariais usando análise de dados e machine learning.</li>
+            <li>
+                <p class="experience-title">Técnico de Copiadoras e Sistemas de Impressão IV – Setor de Soluções (março de 2024 - Presente)</p>
+                <p class="experience-description">Responsável pela implantação e suporte de soluções de impressão, digitalização e gestão de dados.</p>
+                <p class="experience-description">Desenvolvimento de ferramentas para análise, processamento e visualização de dados.</p>
+            </li>
+            <li>
+                <p class="experience-title">Técnico de Copiadoras e Sistemas de Impressão IV (janeiro de 2023 - março de 2024)</p>
+            </li>
+            <li>
+                <p class="experience-title">Técnico de Copiadoras e Sistemas de Impressão III (julho de 2017 - janeiro de 2023)</p>
+            </li>
+            <li>
+                <p class="experience-title">Técnico de Copiadoras e Sistemas de Impressão II (novembro de 2016 - julho de 2017)</p>
+            </li>
+            <li>
+                <p class="experience-title">Técnico PB Jr. (setembro de 2012 - julho de 2017)</p>
+            </li>
+            <li>
+                <p class="experience-title">Estagiário (abril de 2012 - setembro de 2012)</p>
+            </li>
         </ul>
     </div>
 
@@ -90,7 +113,7 @@ html_content = """
             </li>
             <li>
                 <span class="education-title">Anhanguera Educacional</span><br>
-                Pós-graduação Lato Sensu - Business intelligence, Big Data e Analytics - Ciência de Dados (junho de 2022 - dezembro de 2022)
+                Pós-graduação Lato Sensu - Business Intelligence, Big Data e Analytics - Ciência de Dados (junho de 2022 - dezembro de 2022)
             </li>
             <li>
                 <span class="education-title">ETEC Getúlio Vargas</span><br>
