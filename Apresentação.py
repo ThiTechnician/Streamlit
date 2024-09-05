@@ -17,7 +17,7 @@ df = pd.DataFrame(data)
 col1, col2 = st.columns(2)
 with col1:
     # Plotando o gráfico com Plotly Express
-    fig = px.bar(df, x='Categoria', y='Valor', color='Categoria')
+    fig = px.bar(df, x='Categoria', y='Valores', color='Categoria')
 
     # Exibindo o gráfico no Streamlit
     st.plotly_chart(fig)
