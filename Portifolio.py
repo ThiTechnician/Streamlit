@@ -3,13 +3,12 @@ from yaml.loader import SafeLoader
 import streamlit as st
 import streamlit_authenticator as stauth
 from streamlit_authenticator.utilities.exceptions import (CredentialsError, ForgotError, LoginError, RegisterError, ResetError, UpdateError)
-import pyodbc
 import pandas as pd
 from cryptography.fernet import Fernet
 import plotly.express as px
 import base64
-import smtplib
-from email.mime.text import MIMEText
+#import smtplib
+#from email.mime.text import MIMEText
 
 st.set_page_config(
     layout="wide",
