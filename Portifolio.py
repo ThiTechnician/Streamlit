@@ -40,7 +40,7 @@ st.markdown(f'''
 
 
 # Carregar arquivo de configuração
-with open('../config.yaml', 'r', encoding='utf-8') as file:
+with open('config.yaml', 'r', encoding='utf-8') as file:
     config = yaml.load(file, Loader=SafeLoader)
 
 
@@ -141,7 +141,7 @@ if st.session_state["authentication_status"]:
                 config['credentials']['usernames'][client_id]['client_code'] = client_code
 
                 # Salvar as informações atualizadas no arquivo YAML
-                with open('../config.yaml', 'w', encoding='utf-8') as file:
+                with open('config.yaml', 'w', encoding='utf-8') as file:
                     yaml.dump(config, file, default_flow_style=False)
 
                 st.success("Código do cliente atualizado com sucesso.")
@@ -170,7 +170,7 @@ if st.session_state["authentication_status"]:
                         config['credentials']['usernames'][client_id]['client_code'] = client_code_input
 
                         # Salvar as informações atualizadas no arquivo YAML
-                        with open('../config.yaml', 'w', encoding='utf-8') as file:
+                        with open('config.yaml', 'w', encoding='utf-8') as file:
                             yaml.dump(config, file, default_flow_style=False)
                         
                         st.sidebar.success("Código do cliente atualizado com sucesso.")
@@ -183,7 +183,7 @@ if st.session_state["authentication_status"]:
                                                                                                'Repeat password': 'Repita a Senha', 
                                                                                                'Reset':'OK'}):
                             # Salvar as informações atualizadas no arquivo YAML
-                            with open('../config.yaml', 'w', encoding='utf-8') as file:
+                            with open('config.yaml', 'w', encoding='utf-8') as file:
                                 yaml.dump(config, file, default_flow_style=False)
                             st.success('Senha alterada com sucesso!')
                     except Exception as e:
@@ -414,7 +414,7 @@ if st.session_state["authentication_status"]:
                         config['credentials']['usernames'][client_id]['client_code'] = client_code_input
 
                         # Salvar as informações atualizadas no arquivo YAML
-                        with open('../config.yaml', 'w', encoding='utf-8') as file:
+                        with open('config.yaml', 'w', encoding='utf-8') as file:
                             yaml.dump(config, file, default_flow_style=False)
                         
                         st.sidebar.success("Código do cliente atualizado com sucesso.")
@@ -427,7 +427,7 @@ if st.session_state["authentication_status"]:
                                                                                                'Repeat password': 'Repita a Senha', 
                                                                                                'Reset':'OK'}):
                             # Salvar as informações atualizadas no arquivo YAML
-                            with open('../config.yaml', 'w', encoding='utf-8') as file:
+                            with open('config.yaml', 'w', encoding='utf-8') as file:
                                 yaml.dump(config, file, default_flow_style=False)
                             st.success('Senha alterada com sucesso!')
                     except Exception as e:
@@ -696,7 +696,7 @@ if st.session_state["authentication_status"] is None or st.session_state["authen
                     send_reset_email(email_of_forgotten_password, new_random_password)
                     
                     # Salvar as informações atualizadas no arquivo YAML
-                    with open('../config.yaml', 'w', encoding='utf-8') as file:
+                    with open('config.yaml', 'w', encoding='utf-8') as file:
                         yaml.dump(config, file, default_flow_style=False)
                     st.success('Nova senha enviada')
                 elif not username_of_forgotten_password:
@@ -729,5 +729,5 @@ if st.session_state["authentication_status"] is None or st.session_state["authen
             st.error(e)
 
 # Salvar as informações atualizadas no arquivo YAML
-with open('../config.yaml', 'w', encoding='utf-8') as file:
+with open('config.yaml', 'w', encoding='utf-8') as file:
     yaml.dump(config, file, default_flow_style=False)
