@@ -23,7 +23,7 @@ def get_base64_image(image_path):
     with open(image_path, "rb") as image_file:
         return base64.b64encode(image_file.read()).decode()
     
-logo_base64 = get_base64_image("Canon-Logo.png")
+logo_base64 = get_base64_image("logo.png")
 
 
 with open('styles.css') as f:
