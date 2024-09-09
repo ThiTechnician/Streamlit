@@ -1,0 +1,40 @@
+cookie:
+  expiry_days: 30
+  key: some_signature_key
+  name: some_cookie_name
+credentials:
+  usernames:
+    administrador:
+      client_code: '8236274157823465'
+      email: administrador@gmail.com
+      failed_login_attempts: 0
+      logged_in: true
+      name: administrador
+      password: $2b$12$Sokl8kSZOCJd2J1UCf3uvuqQ.2vZR2VeBlqV6HJAX7sW5Zjt3c61m
+      role: admin
+    raia:
+      client_code: RAIA_DROGASIL
+      email: raia@gmail.com
+      failed_login_attempts: 1
+      logged_in: true
+      name: raia
+      password: $2b$12$L2pdtPKSWj9kIQ9sHDEQA.bjbwHdsVs0ecZRq0JmzH5S0ACWIXt4O
+      role: user
+    scania:
+      client_code: SCANIA LATIN AMERICA LTDA
+      email: scania@gmail.com
+      logged_in: true
+      name: scania
+      password: $2b$12$1E8nYs3GGrqUchtpMmtU6.lwOjR1y7lkb/BOObb9DT1H1MMN27GIW
+      role: user
+form_labels:
+  register:
+    email: "Endere\xE7o de Email"
+    name: Nome Completo
+    password: Senha
+    password_repeat: Repita a Senha
+    register_button: Registrar
+    username: "Nome de Usu\xE1rio"
+pre-authorized:
+  emails:
+  - melsby@gmail.com
