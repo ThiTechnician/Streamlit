@@ -11,8 +11,8 @@ pages = {
     "Projetos": [
         st.Page("Portifolio.py", title="Dashboard Manutenção"),
         st.Page("monitor_clima.py", title="Monitor de Clima"),
-        st.Page("conversor_moedas.py", title="Conversor de Moedas"),
         st.Page("analise_vendas.py", title="Análise de Vendas"),
+        st.Page("conversor_moedas.py", title="Conversor de Moedas"),
     ],
 }
 
