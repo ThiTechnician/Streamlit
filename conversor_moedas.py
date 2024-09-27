@@ -16,7 +16,7 @@ def get_exchange_rate(base_currency, target_currency):
 
 # Função para obter o histórico da taxa de câmbio
 def get_exchange_history(base_currency, target_currency, start_date, end_date):
-    url = f"https://api.exchangerate.host/timeseries?start_date={start_date}&end_date={end_date}&base={base_currency}&symbols={target_currency}"
+    url = f"https://api.exchangerate.host/timeseries?start_date={start_date}&end_date={end_date}&base={base_currency}&symbols={target_currency}&access_key={API_KEY}"
     response = requests.get(url)
     data = response.json()
     return data
