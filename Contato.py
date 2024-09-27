@@ -67,6 +67,13 @@ st.markdown("""
         color: #333;
     }
 
+    .subtitle {
+        text-align: center;
+        color: #555;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
     .success-message {
         color: green;
         text-align: center;
@@ -80,14 +87,6 @@ st.markdown("""
         font-size: 20px;
         margin-top: 20px;
     }
-    
-    .subtitle {
-        text-align: center;
-        color: #555;
-        font-size: 18px;
-        margin-bottom: 20px;
-    }
-    
     </style>
     """, unsafe_allow_html=True)
 
@@ -98,6 +97,7 @@ st.title("Entre em Contato")
 with st.form("contact_form", clear_on_submit=True):
     st.markdown('<div class="contact-form">', unsafe_allow_html=True)
     
+    # Colocar o subtítulo logo após abrir o div
     st.markdown('<p class="subtitle">Preencha o formulário abaixo para entrar em contato</p>', unsafe_allow_html=True)
     
     name = st.text_input("Nome", max_chars=100)
