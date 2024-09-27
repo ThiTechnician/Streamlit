@@ -15,7 +15,6 @@ if uploaded_file is not None:
     except UnicodeDecodeError:
         st.error("Erro ao ler o arquivo. Tente usar um arquivo com codificação UTF-8 ou ISO-8859-1.")
 
-
     # Exibir os dados carregados
     st.write("Visualização dos dados de vendas:")
     st.dataframe(df.head())
@@ -23,17 +22,30 @@ if uploaded_file is not None:
     # Converter a coluna de datas
     df['Data'] = pd.to_datetime(df['Data'])
 
-    # Filtros interativos
-    produto_selecionado = st.selectbox("Selecione o produto", df['Produto'].unique())
-    regiao_selecionada = st.selectbox("Selecione a região", df['Região'].unique())
+    # Adicionar opção "Todos" nos filtros
+    produtos_unicos = df['Produto'].unique().tolist()
+    produtos_unicos.insert(0, "Todos")
+    
+    regioes_unicas = df['Região'].unique().tolist()
+    regioes_unicas.insert(0, "Todos")
+
+    # Filtros interativos com "Todos" como uma opção
+    produto_selecionado = st.selectbox("Selecione o produto", produtos_unicos)
+    regiao_selecionada = st.selectbox("Selecione a região", regioes_unicas)
     data_inicio = st.date_input("Data inicial", df['Data'].min())
     data_fim = st.date_input("Data final", df['Data'].max())
 
-    # Filtrar dados com base nos filtros selecionados
-    df_filtrado = df[(df['Produto'] == produto_selecionado) & 
-                     (df['Região'] == regiao_selecionada) & 
-                     (df['Data'] >= pd.to_datetime(data_inicio)) & 
-                     (df['Data'] <= pd.to_datetime(data_fim))]
+    # Filtrar dados com base nos filtros selecionados, ignorando "Todos" quando selecionado
+    df_filtrado = df.copy()
+    
+    if produto_selecionado != "Todos":
+        df_filtrado = df_filtrado[df_filtrado['Produto'] == produto_selecionado]
+    
+    if regiao_selecionada != "Todos":
+        df_filtrado = df_filtrado[df_filtrado['Região'] == regiao_selecionada]
+
+    df_filtrado = df_filtrado[(df['Data'] >= pd.to_datetime(data_inicio)) & 
+                              (df['Data'] <= pd.to_datetime(data_fim))]
 
     # Exibir métricas
     receita_total = df_filtrado['Receita'].sum()
