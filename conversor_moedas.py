@@ -15,11 +15,10 @@ def get_exchange_rate(base_currency, target_currency):
     return data
 
 # Função para obter o histórico da taxa de câmbio
-def get_exchange_history(base_currency, target_currency, date):
-    year = date.year
-    month = date.month
-    day = date.day
-    url = f"https://v6.exchangerate-api.com/v6/{API_KEY}/history/{base_currency}/{year}/{month}/{day}"
+def get_exchange_history(base_currency, target_currency):
+    today = datetime.today().strftime('%Y-%m-%d')
+    one_month_ago = (datetime.today() - timedelta(days=30)).strftime('%Y-%m-%d')
+    url = f"https://api.exchangerate.host/timeseries?start_date={one_month_ago}&end_date={today}&base={base_currency}&symbols={target_currency}"
     response = requests.get(url)
     data = response.json()
     return data
@@ -42,37 +41,29 @@ if st.button("Converter"):
             conversion_rate = rate_data["conversion_rate"]
             converted_value = amount * conversion_rate
             st.write(f"**{amount} {base_currency}** é equivalente a **{converted_value:.2f} {target_currency}**.")
-            st.session_state.converted = True
+            
+            # Exibir histórico de câmbio
+            history_data = get_exchange_history(base_currency, target_currency)
+            if "rates" in history_data:
+                dates = []
+                rates = []
+                for date, rate in history_data["rates"].items():
+                    dates.append(date)
+                    rates.append(rate[target_currency])
+                
+                # Criar DataFrame
+                df_history = pd.DataFrame({
+                    "Data": pd.to_datetime(dates),
+                    f"Taxa de Câmbio ({base_currency} -> {target_currency})": rates
+                })
+
+                # Gráfico de variação de câmbio
+                fig = px.line(df_history, x="Data", y=f"Taxa de Câmbio ({base_currency} -> {target_currency})", 
+                              title=f"Variação da Taxa de Câmbio: {base_currency} para {target_currency}")
+                st.plotly_chart(fig)
+            else:
+                st.warning("Histórico de câmbio não disponível.")
         else:
             st.error("Erro ao obter a taxa de câmbio.")
     else:
         st.warning("Por favor, insira um valor maior que 0.")
-
-# Exibir gráfico e filtro de data somente após uma conversão bem-sucedida
-if st.session_state.get('converted', False):
-    # Seleção do período para o histórico de câmbio
-    st.write("### Selecione o intervalo de datas para visualizar o histórico de câmbio:")
-    
-    # Data de hoje
-    today = datetime.today()
-    
-    # Escolher a data para visualizar o histórico
-    selected_date = st.date_input("Escolha a data", today)
-    
-    if selected_date > today:
-        st.error("A data selecionada não pode ser no futuro.")
-    else:
-        # Exibir histórico de câmbio
-        history_data = get_exchange_history(base_currency, target_currency, selected_date)
-        
-        # Depurar: Mostrar a resposta da API para verificar o formato
-        st.write("Resposta da API:", history_data)
-
-        if history_data.get("result") == "success" and "conversion_rates" in history_data:
-            rate = history_data["conversion_rates"].get(target_currency, None)
-            if rate:
-                st.write(f"Taxa de câmbio em {selected_date}: **1 {base_currency} = {rate} {target_currency}**")
-            else:
-                st.warning("Taxa de câmbio não disponível para o período selecionado.")
-        else:
-            st.warning("Histórico de câmbio não disponível ou não encontrado para a data selecionada.")
