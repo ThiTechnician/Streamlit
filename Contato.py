@@ -62,16 +62,9 @@ st.markdown("""
         background-color: #45a049;
     }
 
-    h1 {
+    h1, h3 {
         text-align: center;
         color: #333;
-    }
-
-    .subtitle {
-        text-align: center;
-        color: #555;
-        font-size: 18px;
-        margin-bottom: 20px;
     }
 
     .success-message {
@@ -93,12 +86,12 @@ st.markdown("""
 # Título da página
 st.title("Entre em Contato")
 
+# Subtítulo
+st.markdown("<h3>Preencha o formulário abaixo para entrar em contato</h3>", unsafe_allow_html=True)
+
 # Formulário de contato estilizado
 with st.form("contact_form", clear_on_submit=True):
     st.markdown('<div class="contact-form">', unsafe_allow_html=True)
-    
-    # Colocar o subtítulo logo após abrir o div
-    st.markdown('<p class="subtitle">Preencha o formulário abaixo para entrar em contato</p>', unsafe_allow_html=True)
     
     name = st.text_input("Nome", max_chars=100)
     email = st.text_input("E-mail", max_chars=100)
