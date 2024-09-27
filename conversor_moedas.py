@@ -71,7 +71,11 @@ if st.session_state.get('converted', False):
         
         # Exibir histórico de câmbio
         history_data = get_exchange_history(base_currency, target_currency, start_date.strftime('%Y-%m-%d'), end_date.strftime('%Y-%m-%d'))
-        if "rates" in history_data:
+        
+        # Depurar: Mostrar a resposta da API para verificar o formato
+        st.write("Resposta da API:", history_data)
+
+        if "rates" in history_data and history_data["rates"]:
             dates = []
             rates = []
             for date, rate in history_data["rates"].items():
@@ -89,4 +93,4 @@ if st.session_state.get('converted', False):
                           title=f"Variação da Taxa de Câmbio: {base_currency} para {target_currency} ({start_date} - {end_date})")
             st.plotly_chart(fig)
         else:
-            st.warning("Histórico de câmbio não disponível.")
+            st.warning("Histórico de câmbio não disponível ou não encontrado para o período selecionado.")
