@@ -1,0 +1,6 @@
+Data,Produto,Quantidade,Receita,Região
+2024-01-01,Produto A,10,1000,Norte
+2024-01-02,Produto B,5,500,Sul
+2024-01-03,Produto C,8,800,Leste
+2024-01-04,Produto A,3,300,Oeste
+2024-01-05,Produto B,7,700,Norte
