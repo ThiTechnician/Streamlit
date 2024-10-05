@@ -5,9 +5,12 @@ import plotly.express as px
 # Título da página
 st.title("Análise de Dados de Vendas")
 
+csv = "planilha_de_vendas.csv"
+
 # Botão de download do template
 st.download_button(
     label="Baixar planilha para preencher",
+    data = csv,
     file_name="planilha_de_vendas.csv",
     mime="text/csv",
 )
