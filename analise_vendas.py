@@ -5,16 +5,17 @@ import plotly.express as px
 # Título da página
 st.title("Análise de Dados de Vendas")
 
-with open("planilha_de_vendas.csv") as c:
-    csv = c
+with open("planilha_de_vendas.csv", "r") as c:
+    csv_content = c.read()
 
 # Botão de download do template
 st.download_button(
     label="Baixar planilha para preencher",
-    data = csv,
+    data=csv_content,
     file_name="planilha_de_vendas.csv",
     mime="text/csv",
 )
+
 
 # Upload de arquivo CSV
 uploaded_file = st.file_uploader("Carregar arquivo de dados de vendas (CSV)", type=["csv"])
